@@ -1,2 +1,10 @@
-# LaPatateSolidaire
-Base de code pour le site web du projet à impact RSE d'un groupe d'étudiants de l'ESIEA, campus de Laval. 
+# Maquette site web La Patate Solidaire
+
+  This is a code bundle for Site web La Patate Solidaire. 
+  
+## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  

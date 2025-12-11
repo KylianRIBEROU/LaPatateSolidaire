@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-green-dark: #27532F;
+    --color-green-medium: #4C7A46;
+    --color-green-light: #E8F2D5;
+    --color-orange: #F59A4A;
+    --color-yellow: #F4C16E;
+    --color-red: #E85C4A;
+    --color-brown: #C48A59;
+    --color-white: #FFFDF4;
+  }
+
+  body {
+    font-family: 'Nunito', 'Quicksand', 'Rounded Mplus', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-green-light);
+    color: var(--color-green-dark);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', 'Nunito', 'Quicksand', system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--color-green-dark);
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+}
