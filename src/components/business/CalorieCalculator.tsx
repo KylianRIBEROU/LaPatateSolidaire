@@ -193,7 +193,7 @@ export default function CalorieCalculator() {
 
                 {results && (
                     <div className="space-y-8">
-                        <div className="bg-gradient-to-r from-[#4C7A46] to-[#27532F] rounded-3xl p-8 text-white shadow-xl">
+                        <div className="bg-gradient-to-r from-[#4C7A46] to-[#27532F] rounded-3xl p-8 shadow-xl">
                             <div className="flex items-center gap-4 mb-6">
                                 <TrendingUp size={32} className="text-[#F4C16E]" />
                                 <h2 className="text-[#F4C16E]">Vos résultats</h2>

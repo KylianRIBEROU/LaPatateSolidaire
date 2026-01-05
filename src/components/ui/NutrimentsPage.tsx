@@ -248,11 +248,11 @@ export function NutrimentsPage() {
         </section>
 
         {/* Section résumé */}
-        <section className="bg-gradient-to-r from-[#4C7A46] to-[#27532F] rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+        <section className="bg-gradient-to-r from-[#4C7A46] to-[#27532F] rounded-3xl p-8 sm:p-12 shadow-xl">
           <h2 className="text-[#F4C16E] mb-6 text-center">En résumé</h2>
           
           <div className="space-y-4">
-            <p>
+            <p className="text-white">
               Les calories, c'est ce qui fournit l'énergie dont on a besoin chaque jour, et les macronutriments 
               sont la manière dont cette énergie est distribuée et utilisée.
             </p>
@@ -263,7 +263,7 @@ export function NutrimentsPage() {
                   <Zap className="text-[#F4C16E]" size={40} />
                 </div>
                 <h3 className="text-[#F4C16E] text-center mb-3">Glucides</h3>
-                <p className="text-center text-sm">
+                <p className="text-center text-sm font-bold">
                   Carburant immédiat, surtout pour le cerveau et les muscles
                 </p>
               </div>
@@ -273,7 +273,7 @@ export function NutrimentsPage() {
                   <Wrench className="text-[#F4C16E]" size={40} />
                 </div>
                 <h3 className="text-[#F4C16E] text-center mb-3">Protéines</h3>
-                <p className="text-center text-sm">
+                <p className="text-center text-sm font-bold">
                   Construisent et réparent en continu l'ensemble du corps
                 </p>
               </div>
@@ -283,7 +283,7 @@ export function NutrimentsPage() {
                   <Battery className="text-[#F4C16E]" size={40} />
                 </div>
                 <h3 className="text-[#F4C16E] text-center mb-3">Lipides</h3>
-                <p className="text-center text-sm">
+                <p className="text-center text-sm font-bold">
                   Soutiennent les fonctions vitales et fournissent une énergie durable
                 </p>
               </div>
