@@ -2,14 +2,14 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface HeaderProps {
-  onNavigate: (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes") => void;
-  currentPage: "accueil" | "nutriments" | "bien-salimenter" | "recettes";
+  onNavigate: (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq") => void;
+  currentPage: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq";
 }
 
 export function Header({ onNavigate, currentPage }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleNavClick = (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes") => {
+  const handleNavClick = (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq") => {
     onNavigate(page);
     setIsMenuOpen(false);
   };
@@ -61,6 +61,15 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               >
                 Trouver des recettes
               </button>
+
+              <button
+                  onClick={() => handleNavClick("conseils-faq")}
+                  className={`${
+                      currentPage === "conseils-faq" ? "text-[#F59A4A]" : "text-[#27532F]"
+                  } hover:text-[#4C7A46] transition-colors text-xl font-bold`}
+              >
+                Conseils & FAQ
+              </button>
             </nav>
 
             {/* Menu Mobile Toggle */}
@@ -109,6 +118,15 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                     } hover:text-[#4C7A46] transition-colors py-2 text-left text-2xl font-bold`}
                 >
                   Trouver des recettes
+                </button>
+
+                <button
+                    onClick={() => handleNavClick("conseils-faq")}
+                    className={`${
+                        currentPage === "conseils-faq" ? "text-[#F59A4A]" : "text-[#27532F]"
+                    } hover:text-[#4C7A46] transition-colors py-2 text-left text-2xl font-bold`}
+                >
+                  Conseils & FAQ
                 </button>
               </nav>
           )}

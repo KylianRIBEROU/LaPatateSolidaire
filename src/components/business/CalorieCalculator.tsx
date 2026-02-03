@@ -22,34 +22,34 @@ export default function CalorieCalculator() {
 
     const foodRecommendations = {
         glucides: [
-            { name: 'Pâtes complètes', portion: '80g cru', calories: 280 },
-            { name: 'Riz complet', portion: '80g cru', calories: 285 },
-            { name: 'Flocons d\'avoine', portion: '50g', calories: 185 },
-            { name: 'Pain complet', portion: '100g', calories: 247 },
-            { name: 'Pommes de terre', portion: '200g', calories: 154 },
-            { name: 'Quinoa', portion: '80g cru', calories: 312 },
-            { name: 'Lentilles', portion: '80g cru', calories: 270 },
-            { name: 'Banane', portion: '1 moyenne', calories: 105 }
+            { name: 'Pommes de terre', portion: '200g', calories: 154, price: 1.50 },
+            { name: 'Banane', portion: '1 moyenne', calories: 105, price: 2.00 },
+            { name: 'Pâtes complètes', portion: '80g cru', calories: 280, price: 2.20 },
+            { name: 'Flocons d\'avoine', portion: '50g', calories: 185, price: 2.50 },
+            { name: 'Riz complet', portion: '80g cru', calories: 285, price: 3.00 },
+            { name: 'Lentilles', portion: '80g cru', calories: 270, price: 3.50 },
+            { name: 'Pain complet', portion: '100g', calories: 247, price: 4.50 },
+            { name: 'Quinoa', portion: '80g cru', calories: 312, price: 10.00 }
         ],
         proteines: [
-            { name: 'Poulet', portion: '100g', calories: 165 },
-            { name: 'Œufs', portion: '2 œufs', calories: 140 },
-            { name: 'Thon en conserve', portion: '100g', calories: 116 },
-            { name: 'Sardines', portion: '100g', calories: 208 },
-            { name: 'Yaourt grec 0%', portion: '150g', calories: 90 },
-            { name: 'Tofu', portion: '100g', calories: 76 },
-            { name: 'Haricots rouges', portion: '100g cuit', calories: 127 },
-            { name: 'Fromage blanc 0%', portion: '100g', calories: 47 }
+            { name: 'Œufs', portion: '2 œufs', calories: 140, price: 2.80 },
+            { name: 'Fromage blanc 0%', portion: '100g', calories: 47, price: 3.00 },
+            { name: 'Haricots rouges', portion: '100g cuit', calories: 127, price: 3.50 },
+            { name: 'Yaourt grec 0%', portion: '150g', calories: 90, price: 4.50 },
+            { name: 'Tofu', portion: '100g', calories: 76, price: 7.00 },
+            { name: 'Poulet', portion: '100g', calories: 165, price: 8.00 },
+            { name: 'Sardines', portion: '100g', calories: 208, price: 13.00 },
+            { name: 'Thon en conserve', portion: '100g', calories: 116, price: 18.00 }
         ],
         lipides: [
-            { name: 'Huile d\'olive', portion: '1 c. à soupe', calories: 120 },
-            { name: 'Avocat', portion: '1/2 avocat', calories: 120 },
-            { name: 'Amandes', portion: '30g', calories: 170 },
-            { name: 'Noix', portion: '30g', calories: 185 },
-            { name: 'Beurre de cacahuète', portion: '1 c. à soupe', calories: 95 },
-            { name: 'Saumon', portion: '100g', calories: 208 },
-            { name: 'Graines de chia', portion: '1 c. à soupe', calories: 60 },
-            { name: 'Huile de colza', portion: '1 c. à soupe', calories: 120 }
+            { name: 'Huile de colza', portion: '1 c. à soupe', calories: 120, price: 4.50 },
+            { name: 'Beurre de cacahuète', portion: '1 c. à soupe', calories: 95, price: 6.00 },
+            { name: 'Avocat', portion: '1/2 avocat', calories: 120, price: 6.50 },
+            { name: 'Huile d\'olive', portion: '1 c. à soupe', calories: 120, price: 10.00 },
+            { name: 'Amandes', portion: '30g', calories: 170, price: 15.00 },
+            { name: 'Graines de chia', portion: '1 c. à soupe', calories: 60, price: 18.00 },
+            { name: 'Noix', portion: '30g', calories: 185, price: 20.00 },
+            { name: 'Saumon', portion: '100g', calories: 208, price: 25.00 }
         ]
     };
 
@@ -233,9 +233,13 @@ export default function CalorieCalculator() {
                         </div>
 
                         <div className="bg-[#FFFDF4] rounded-3xl p-8 shadow-xl">
-                            <h2 className="text-[#27532F] mb-6">Aliments recommandés et abordables</h2>
-                            <p className="text-[#4C7A46] mb-8">
+                            <h2 className="text-[#27532F] mb-4">Aliments recommandés et abordables</h2>
+                            <p className="text-[#4C7A46] mb-2">
                                 Voici une liste d'aliments économiques pour atteindre vos objectifs nutritionnels :
+                            </p>
+                            <p className="text-[#4C7A46] text-sm mb-8 flex items-center gap-2">
+                                <span className="text-[#F59A4A]">💰</span>
+                                <span className="italic">Produits triés par prix croissant (prix moyen au kg - supermarchés français)</span>
                             </p>
 
                             <div className="grid md:grid-cols-3 gap-6">
@@ -254,9 +258,14 @@ export default function CalorieCalculator() {
                                             <div key={idx} className="bg-white rounded-xl p-3">
                                                 <div className="flex justify-between items-start mb-1">
                                                     <p className="font-medium text-[#27532F]">{food.name}</p>
-                                                    <span className="text-xs bg-[#F4C16E] text-white px-2 py-1 rounded-full">
-                            {food.calories} kcal
-                          </span>
+                                                    <div className="flex gap-2">
+                                                        <span className="text-xs bg-[#4C7A46] text-white px-2 py-1 rounded-full font-medium">
+                                                            {food.price.toFixed(2)}€/kg
+                                                        </span>
+                                                        <span className="text-xs bg-[#F4C16E] text-white px-2 py-1 rounded-full">
+                                                            {food.calories} kcal
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <p className="text-sm text-[#4C7A46]">{food.portion}</p>
                                             </div>
@@ -279,9 +288,14 @@ export default function CalorieCalculator() {
                                             <div key={idx} className="bg-white rounded-xl p-3">
                                                 <div className="flex justify-between items-start mb-1">
                                                     <p className="font-medium text-[#27532F]">{food.name}</p>
-                                                    <span className="text-xs bg-[#4C7A46] text-white px-2 py-1 rounded-full">
-                            {food.calories} kcal
-                          </span>
+                                                    <div className="flex gap-2">
+                                                        <span className="text-xs bg-[#4C7A46] text-white px-2 py-1 rounded-full font-medium">
+                                                            {food.price.toFixed(2)}€/kg
+                                                        </span>
+                                                        <span className="text-xs bg-[#4C7A46] text-white px-2 py-1 rounded-full">
+                                                            {food.calories} kcal
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <p className="text-sm text-[#4C7A46]">{food.portion}</p>
                                             </div>
@@ -304,9 +318,14 @@ export default function CalorieCalculator() {
                                             <div key={idx} className="bg-white rounded-xl p-3">
                                                 <div className="flex justify-between items-start mb-1">
                                                     <p className="font-medium text-[#27532F]">{food.name}</p>
-                                                    <span className="text-xs bg-[#F59A4A] text-white px-2 py-1 rounded-full">
-                            {food.calories} kcal
-                          </span>
+                                                    <div className="flex gap-2">
+                                                        <span className="text-xs bg-[#4C7A46] text-white px-2 py-1 rounded-full font-medium">
+                                                            {food.price.toFixed(2)}€/kg
+                                                        </span>
+                                                        <span className="text-xs bg-[#F59A4A] text-white px-2 py-1 rounded-full">
+                                                            {food.calories} kcal
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <p className="text-sm text-[#4C7A46]">{food.portion}</p>
                                             </div>

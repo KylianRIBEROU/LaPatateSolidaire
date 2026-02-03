@@ -11,6 +11,7 @@ import { TomatoMascot } from "./components/svg/TomatoMascot";
 import { NutrimentsPage } from "./components/ui/NutrimentsPage";
 import { BienSalimenter } from "./components/ui/BienSalimenterPage";
 import { RecettesPage } from "./components/ui/RecettesPage";
+import { ConseillsFAQPage } from "./components/ui/ConseillsFAQPage";
 import { useState } from "react";
 import {
   BookOpen,
@@ -23,7 +24,7 @@ import {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
-      "accueil" | "nutriments" | "bien-salimenter" | "recettes"
+      "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq"
   >("accueil");
 
   return (
@@ -204,8 +205,10 @@ export default function App() {
             <NutrimentsPage />
         ) : currentPage === "bien-salimenter" ? (
             <BienSalimenter />
-        ) : (
+        ) : currentPage === "recettes" ? (
             <RecettesPage />
+        ) : (
+            <ConseillsFAQPage />
         )}
 
         <Footer />
