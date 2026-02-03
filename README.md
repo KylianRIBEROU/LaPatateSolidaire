@@ -29,3 +29,5 @@ et ca leur affiche les infos précises ( genre un diagnostic )
 ONGLET conseils/FAQ ou on répond aux questions typiques et debunk des fausses infos ( exemple : véracité de l'IMC )
 
 de manière générale, juste continuer le développement et compléter les informations. On remarque forcément des problèmes et axes d'amélioration au fur et a mesure qu'on utilise le site de toute manière
+
+page recettes - Section avec liens vers comptes youtube, instagram, ... qui partagent des recettes.
