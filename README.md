@@ -22,7 +22,6 @@ TODO
   
 ## TODO
 
-- quand on clique sur une page dans la navbar, ca doit nous ramener en haut de celle-ci ( logique )
 
 - page "Aides A laval " : Dans une autre section de la page, rajouter une ligne avec quelques cases alignées horizontalement présentant les (super)marchés de Laval : Carrefour et les paniers anti gaspi pour fruits et légumes, Leclerc et son rayon date de péremption proche, ... 
 

@@ -12,6 +12,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
   const handleNavClick = (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval") => {
     onNavigate(page);
     setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
