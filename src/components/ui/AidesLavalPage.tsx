@@ -3,6 +3,10 @@ import { type ReactNode } from 'react';
 import imgMarcheSolidaire from '../../assets/marchesolidaire.jpg';
 import imgFoodTruck from '../../assets/camioncroixrouge.jpg';
 import imgRestos from '../../assets/restosducoeur1.jpg';
+import imgMarches from '../../assets/marche_laval_illustration.jpg';
+import logoCarrefour from '../../assets/logo_carrefour.png';
+import logoLeclerc from '../../assets/logo_leclerc.png';
+import logoIntermarche from '../../assets/logo_intermarche.png';
 
 interface AideEntry {
   id: string;
@@ -66,6 +70,59 @@ const aides: AideEntry[] = [
     imagePosition: "left",
     image: imgRestos,
   },
+  {
+    id: "marches-laval",
+    title: "Les marchés de Laval",
+    highlights: [
+      <>Marché Central : <B>samedi matin</B>, centre-ville historique (150 commerçants dont 60 maraîchers)</>,
+      <>Marché de la Gare : <B>samedi matin</B>, pied de la gare (exclusivement alimentaire)</>,
+      <>Marché Château-Neuf : <B>mardi matin</B>, esplanade du Château-Neuf</>,
+      <>Bourny : <B>mercredi</B>, Place de la Commune</>,
+      <>Murat : <B>vendredi</B>, Rue Oudinot</>,
+      <>Halles Saint-Louis : <B>du mardi au samedi</B>, 11 Allée du Vieux Saint Louis</>,
+    ],
+    description:
+      "Les marchés de Laval sont ouverts à tous ! C'est l'occasion de trouver des produits frais, locaux et de qualité, directement auprès de producteurs et maraîchers de la région. Une découverte intéressante pour manger sainement.",
+    link: "https://www.laval.fr/au-quotidien/commerces-et-marches/marches-hebdomadaires",
+    imagePosition: "right",
+    image: imgMarches,
+  },
+];
+
+interface SupermarcheEntry {
+  id: string;
+  name: string;
+  logo: string;
+  address: string;
+  marqueEco: string;
+  specificite: string;
+}
+
+const supermarches: SupermarcheEntry[] = [
+  {
+    id: "carrefour",
+    name: "Carrefour",
+    logo: logoCarrefour,
+    address: "61 Boulevard Félix Grat Saint Michel, 53000 Laval",
+    marqueEco: "Simpl",
+    specificite: "Paniers anti-gaspi pour fruits et légumes à prix réduit",
+  },
+  {
+    id: "leclerc",
+    name: "E.Leclerc",
+    logo: logoLeclerc,
+    address: "60 Av. de la Communauté Européenne, 53000 Laval",
+    marqueEco: "Marque Repère / Éco+",
+    specificite: "Rayon dédié aux produits à date de péremption proche à prix réduit",
+  },
+  {
+    id: "intermarche",
+    name: "Intermarché",
+    logo: logoIntermarche,
+    address: "ZI, 195 Avenue de Chanzy, Imp. Saint-Mélaine, 53000 Laval",
+    marqueEco: "Top Budget",
+    specificite: "Produits locaux et filières régionales à prix accessibles",
+  },
 ];
 
 export function AidesLavalPage() {
@@ -126,6 +183,40 @@ export function AidesLavalPage() {
             </div>
           </section>
         ))}
+
+        {/* Séparateur */}
+        <div className="border-t border-[#4C7A46]/30 my-16" />
+
+        {/* Section Supermarchés */}
+        <div className="text-center mb-12">
+          <h2 className="text-[#27532F] mb-4">Les supermarchés à Laval</h2>
+          <p className="text-[#4C7A46] text-lg max-w-3xl mx-auto">
+            Quelques enseignes à connaître... 
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {supermarches.map((s) => (
+            <div
+              key={s.id}
+              className="bg-[#FFFDF4] rounded-2xl p-6 shadow-lg shadow-black/10 flex flex-col items-center text-center"
+            >
+              <img
+                src={s.logo}
+                alt={s.name}
+                className="h-20 object-contain mb-4"
+              />
+              <h3 className="text-[#27532F] text-xl font-bold underline mb-3">{s.name}</h3>
+              <p className="text-[#F59A4A] text-sm font-bold mb-3">{s.address}</p>
+              <p className="text-[#4C7A46] text-sm mb-3">
+                <span className="font-bold text-[#27532F]">Marque économique :</span> {s.marqueEco}
+              </p>
+              <p className="text-[#4C7A46] text-sm">
+                <span className="font-bold text-[#27532F]">Bon plan :</span> {s.specificite}
+              </p>
+            </div>
+          ))}
+        </div>
 
         {/* Retour en haut */}
         <div className="text-center mt-12">
