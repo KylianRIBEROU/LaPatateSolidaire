@@ -1,7 +1,8 @@
 import { Flame, Zap, Wrench, Battery, Lightbulb, ArrowRight } from 'lucide-react';
-import { PotatoMascot } from '../svg/PotatoMascot';
-import { CarrotMascot } from '../svg/CarrotMascot';
-import { TomatoMascot } from '../svg/TomatoMascot';
+import imgVennDiagram from '../../assets/macronutriments_venn_diagram.png';
+import imgGlucides from '../../assets/glucides_illustration.png';
+import imgProteines from '../../assets/proteins_image.png';
+import imgLipides from '../../assets/lipides_illustration_2.png';
 
 export function NutrimentsPage() {
   return (
@@ -9,15 +10,69 @@ export function NutrimentsPage() {
       <div className="max-w-6xl mx-auto">
         {/* En-tête de la page */}
         <div className="text-center mb-16">
-          <div className="flex justify-center gap-4 mb-6">
-            <CarrotMascot size={80} />
-            <PotatoMascot size={80} />
-            <TomatoMascot size={80} />
-          </div>
           <h1 className="text-[#27532F] mb-4">Comprendre la nutrition</h1>
           <p className="text-[#4C7A46] text-xl max-w-3xl mx-auto">
             Découvrez comment votre corps utilise l'énergie des aliments et pourquoi chaque nutriment compte !
           </p>
+        </div>
+
+        {/* Section: En bref */}
+        <section className="bg-gradient-to-r from-[#4C7A46] to-[#27532F] rounded-3xl p-8 sm:p-12 mb-8 shadow-xl">
+          <h2 className="text-[#F4C16E] mb-6 text-center">Pour résumer</h2>
+
+          <p className="text-white text-lg mb-6">
+            Les calories, c'est ce qui <b>fournit l'énergie dont on a besoin</b> chaque jour, et les macronutriments
+            sont <b>la manière dont cette énergie est distribuée et utilisée</b>.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-start gap-6">
+            {/* Colonne gauche : image */}
+            <div className="md:w-3/5">
+              <img
+                src={imgVennDiagram}
+                alt="Diagramme de Venn des macronutriments"
+                className="w-full rounded-2xl border-2 border-black bg-gray-100 px-8 py-4"
+              />
+            </div>
+
+            {/* Colonne droite : 3 cards empilées */}
+            <div className="md:w-2/5 flex flex-col gap-4 justify-between">
+              <div className="bg-white bg-opacity-10 rounded-2xl p-5 backdrop-blur flex-1 flex flex-col justify-center">
+                <div className="flex justify-center mb-3">
+                  <Zap className="text-[#F4C16E]" size={36} />
+                </div>
+                <h3 className="text-[#F4C16E] text-center mb-2">Glucides</h3>
+                <p className="text-center text-sm font-bold">
+                  Carburant immédiat, surtout pour le cerveau et les muscles
+                </p>
+              </div>
+
+              <div className="bg-white bg-opacity-10 rounded-2xl p-5 backdrop-blur flex-1 flex flex-col justify-center">
+                <div className="flex justify-center mb-3">
+                  <Wrench className="text-[#F4C16E]" size={36} />
+                </div>
+                <h3 className="text-[#F4C16E] text-center mb-2">Protéines</h3>
+                <p className="text-center text-sm font-bold">
+                  Construisent et réparent en continu l'ensemble du corps
+                </p>
+              </div>
+
+              <div className="bg-white bg-opacity-10 rounded-2xl p-5 backdrop-blur flex-1 flex flex-col justify-center">
+                <div className="flex justify-center mb-3">
+                  <Battery className="text-[#F4C16E]" size={36} />
+                </div>
+                <h3 className="text-[#F4C16E] text-center mb-2">Lipides</h3>
+                <p className="text-center text-sm font-bold">
+                  Soutiennent les fonctions vitales et fournissent une énergie durable
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Titre section détail */}
+        <div className="text-center my-12">
+          <h2 className="text-[#27532F]">En détail...</h2>
         </div>
 
         {/* Section: La calorie */}
@@ -84,7 +139,7 @@ export function NutrimentsPage() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <PotatoMascot size={120} />
+              <img src={imgGlucides} alt="Glucides" className="w-full max-w-260px] rounded-xl" />
             </div>
           </div>
 
@@ -126,7 +181,7 @@ export function NutrimentsPage() {
           
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             <div className="flex items-center justify-center order-2 md:order-1">
-              <CarrotMascot size={120} />
+              <img src={imgProteines} alt="Protéines" className="w-full max-w-[260px] rounded-xl" />
             </div>
             <div className="md:col-span-2 space-y-4 text-[#4C7A46] order-1 md:order-2">
               <p>
@@ -221,7 +276,7 @@ export function NutrimentsPage() {
               </ul>
             </div>
             <div className="flex items-center justify-center">
-              <TomatoMascot size={120} />
+              <img src={imgLipides} alt="Lipides" className="w-full max-w-[260px] rounded-xl" />
             </div>
           </div>
 
@@ -241,50 +296,6 @@ export function NutrimentsPage() {
                 <h3 className="text-[#E85C4A] mb-2">⚠ Lipides à limiter</h3>
                 <p className="text-[#27532F] text-sm">
                   Fritures, plats très transformés, produits industriels
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section résumé */}
-        <section className="bg-gradient-to-r from-[#4C7A46] to-[#27532F] rounded-3xl p-8 sm:p-12 shadow-xl">
-          <h2 className="text-[#F4C16E] mb-6 text-center">En résumé</h2>
-          
-          <div className="space-y-4">
-            <p className="text-white">
-              Les calories, c'est ce qui fournit l'énergie dont on a besoin chaque jour, et les macronutriments 
-              sont la manière dont cette énergie est distribuée et utilisée.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-white bg-opacity-10 rounded-2xl p-6 backdrop-blur">
-                <div className="flex justify-center mb-4">
-                  <Zap className="text-[#F4C16E]" size={40} />
-                </div>
-                <h3 className="text-[#F4C16E] text-center mb-3">Glucides</h3>
-                <p className="text-center text-sm font-bold">
-                  Carburant immédiat, surtout pour le cerveau et les muscles
-                </p>
-              </div>
-              
-              <div className="bg-white bg-opacity-10 rounded-2xl p-6 backdrop-blur">
-                <div className="flex justify-center mb-4">
-                  <Wrench className="text-[#F4C16E]" size={40} />
-                </div>
-                <h3 className="text-[#F4C16E] text-center mb-3">Protéines</h3>
-                <p className="text-center text-sm font-bold">
-                  Construisent et réparent en continu l'ensemble du corps
-                </p>
-              </div>
-              
-              <div className="bg-white bg-opacity-10 rounded-2xl p-6 backdrop-blur">
-                <div className="flex justify-center mb-4">
-                  <Battery className="text-[#F4C16E]" size={40} />
-                </div>
-                <h3 className="text-[#F4C16E] text-center mb-3">Lipides</h3>
-                <p className="text-center text-sm font-bold">
-                  Soutiennent les fonctions vitales et fournissent une énergie durable
                 </p>
               </div>
             </div>
