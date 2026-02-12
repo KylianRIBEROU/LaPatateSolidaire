@@ -60,7 +60,7 @@ export function ConseillsFAQPage() {
                                     <p className="text-[#4C7A46] text-base">
                                         L'IMC ne tient pas compte de la masse musculaire, de la répartition des graisses,
                                         ni de la composition corporelle. Un athlète musclé peut avoir un IMC élevé tout en
-                                        étant en excellente santé. C'est un indicateur général, pas une vérité absolue.
+                                        étant en excellente santé. C'est un indicateur général, pas une vérité absolue. En cas de doute, nous vous conseillons de vous rapprocher d'un professionnel de santé pour une évaluation complète.
                                     </p>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ export function ConseillsFAQPage() {
                                     <p className="text-[#4C7A46] text-base">
                                         Sauter des repas ralentit le métabolisme et peut conduire à des grignotages
                                         et à une suralimentation au repas suivant. Il vaut mieux manger régulièrement
-                                        et équilibré pour maintenir une énergie stable.
+                                        et équilibré pour maintenir une énergie stable. 
                                     </p>
                                 </div>
                             </div>
@@ -106,9 +106,9 @@ export function ConseillsFAQPage() {
                                 <div>
                                     <h4 className="text-[#27532F] font-bold mb-2">Réalité :</h4>
                                     <p className="text-[#4C7A46] text-base">
-                                        Ce qui compte, c'est le total calorique sur la journée, pas l'heure à laquelle
-                                        vous mangez. Les glucides le soir peuvent même favoriser le sommeil en aidant
-                                        la production de sérotonine.
+                                        En effet, manger un repas lourd et très gras ou sucré juste avant d'aller se coucher peut pertuber le sommeil. Mais ce qui détermine la prise de poids, c'est le total calorique sur la journée, pas l'heure à laquelle
+                                        vous mangez !
+                                        <p></p><i>Se référer à la page "Bien s'alimenter" pour plus de détails.</i>
                                     </p>
                                 </div>
                             </div>

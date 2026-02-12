@@ -12,6 +12,7 @@ import { NutrimentsPage } from "./components/ui/NutrimentsPage";
 import { BienSalimenter } from "./components/ui/BienSalimenterPage";
 import { RecettesPage } from "./components/ui/RecettesPage";
 import { ConseillsFAQPage } from "./components/ui/ConseillsFAQPage";
+import { AidesLavalPage } from "./components/ui/AidesLavalPage";
 import { useState } from "react";
 import {
   BookOpen,
@@ -24,7 +25,7 @@ import {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
-      "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq"
+      "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval"
   >("accueil");
 
   return (
@@ -207,11 +208,13 @@ export default function App() {
             <BienSalimenter />
         ) : currentPage === "recettes" ? (
             <RecettesPage />
-        ) : (
+        ) : currentPage === "conseils-faq" ? (
             <ConseillsFAQPage />
+        ) : (
+            <AidesLavalPage />
         )}
 
-        <Footer />
+        <Footer onNavigate={setCurrentPage} />
       </div>
   );
 }

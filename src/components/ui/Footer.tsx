@@ -3,21 +3,25 @@ import { PotatoMascot } from '../svg/PotatoMascot';
 import { CarrotMascot } from '../svg/CarrotMascot';
 import { TomatoMascot } from '../svg/TomatoMascot';
 
-export function Footer() {
+interface FooterProps {
+  onNavigate: (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval") => void;
+}
+
+export function Footer({ onNavigate }: FooterProps) {
+  const handleNavigate = (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval") => {
+    onNavigate(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-[#27532F] text-[#FFFDF4] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Slogan principal */}
         <div className="text-center mb-10">
-          <div className="flex justify-center items-center gap-4 mb-4">
-            <PotatoMascot size={50} />
-            <Heart className="text-[#E85C4A]" size={32} fill="#E85C4A" />
-            <CarrotMascot size={50} />
-          </div>
           <h2 className="text-[#F4C16E] text-2xl sm:text-3xl mb-2">
             Donner la patate à ceux qui en ont besoin !
           </h2>
-          <p className="text-[#E8F2D5]">Initiative solidaire pour les étudiants</p>
+          <p className="text-[#E8F2D5]">Initiative solidaire pour les étudiants et les personnes en situation de précarité</p>
         </div>
 
         {/* Sections du footer */}
@@ -27,24 +31,34 @@ export function Footer() {
             <h3 className="text-[#F4C16E] mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#accueil" className="hover:text-[#F4C16E] transition-colors">
+                <button onClick={() => handleNavigate("accueil")} className="hover:text-[#F4C16E] transition-colors">
                   Accueil
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#nutrition" className="hover:text-[#F4C16E] transition-colors">
-                  La nutrition
-                </a>
+                <button onClick={() => handleNavigate("nutriments")} className="hover:text-[#F4C16E] transition-colors">
+                  Les nutriments
+                </button>
               </li>
               <li>
-                <a href="#recettes" className="hover:text-[#F4C16E] transition-colors">
-                  Recettes
-                </a>
+                <button onClick={() => handleNavigate("bien-salimenter")} className="hover:text-[#F4C16E] transition-colors">
+                  Bien s'alimenter
+                </button>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#F4C16E] transition-colors">
-                  Contact
-                </a>
+                <button onClick={() => handleNavigate("recettes")} className="hover:text-[#F4C16E] transition-colors">
+                  Trouver des recettes
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigate("conseils-faq")} className="hover:text-[#F4C16E] transition-colors">
+                  Conseils & FAQ
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigate("aides-laval")} className="hover:text-[#F4C16E] transition-colors">
+                  Les aides à Laval
+                </button>
               </li>
             </ul>
           </div>
@@ -84,7 +98,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-[#F59A4A] mt-1" />
-                <span>Campus universitaire</span>
+                <span>ESIEA, 53000 Laval</span>
               </li>
             </ul>
           </div>
@@ -99,7 +113,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="text-center mt-6 text-[#E8F2D5] text-sm">
-          © 2025 La Patate Solidaire - Tous droits réservés
+          © {new Date().getFullYear()} La Patate Solidaire - Tous droits réservés
         </div>
       </div>
     </footer>

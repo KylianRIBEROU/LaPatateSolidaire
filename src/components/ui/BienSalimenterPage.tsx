@@ -6,7 +6,6 @@ export function BienSalimenter() {
     return (
         <div>
             <CalorieCalculator />
-            <h2>TODO</h2>
         </div>
     );
 }

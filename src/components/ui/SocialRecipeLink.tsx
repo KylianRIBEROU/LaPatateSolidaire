@@ -7,6 +7,7 @@ interface SocialRecipeLinkProps {
   description: string;
   color?: 'orange' | 'green' | 'yellow' | 'red';
   icon: ReactNode;
+  image?: string;
 }
 
 export function SocialRecipeLink({
@@ -14,7 +15,8 @@ export function SocialRecipeLink({
   accountUrl,
   description,
   color = 'orange',
-  icon
+  icon,
+  image
 }: SocialRecipeLinkProps) {
   const colorClasses = {
     orange: 'bg-[#F59A4A]',
@@ -30,9 +32,17 @@ export function SocialRecipeLink({
       rel="noopener noreferrer"
       className="block bg-[#FFFDF4] rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 duration-300 group"
     >
-      <div className={`${colorClasses[color]} w-20 h-20 rounded-full flex items-center justify-center mb-5 mx-auto group-hover:scale-110 transition-transform duration-300`}>
-        {icon}
-      </div>
+      {image ? (
+        <img
+          src={image}
+          alt={accountName}
+          className="w-20 h-20 rounded-full object-cover mb-5 mx-auto group-hover:scale-110 transition-transform duration-300"
+        />
+      ) : (
+        <div className={`${colorClasses[color]} w-20 h-20 rounded-full flex items-center justify-center mb-5 mx-auto group-hover:scale-110 transition-transform duration-300`}>
+          {icon}
+        </div>
+      )}
       <h3 className="text-[#27532F] text-center mb-3 font-bold">{accountName}</h3>
       <p className="text-[#4C7A46] text-center text-base">{description}</p>
     </a>

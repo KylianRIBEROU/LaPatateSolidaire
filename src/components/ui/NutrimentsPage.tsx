@@ -161,23 +161,23 @@ export function NutrimentsPage() {
             et soutenir le système immunitaire.
           </p>
 
-          <div className="bg-[#E85C4A] bg-opacity-10 border-l-4 border-[#E85C4A] rounded-xl p-6">
+          <div className="bg-[#FEF3E2] border-l-4 border-[#F59A4A] rounded-xl p-6">
             <h3 className="text-[#27532F] mb-3">Quand on manque de protéines :</h3>
             <ul className="space-y-2 text-[#4C7A46]">
               <li className="flex items-start gap-3">
-                <span className="text-[#E85C4A]">⚠</span>
+                <span className="text-[#F59A4A]">⚠</span>
                 <span>On est souvent fatigué</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#E85C4A]">⚠</span>
+                <span className="text-[#F59A4A]">⚠</span>
                 <span>On récupère mal après un effort</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#E85C4A]">⚠</span>
-                <span>On peut perdre du muscle</span>
+                <span className="text-[#F59A4A]">⚠</span>
+                <span>le renouvellement des tissus musculaires est ralenti</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#E85C4A]">⚠</span>
+                <span className="text-[#F59A4A]">⚠</span>
                 <span>Le système immunitaire devient plus fragile</span>
               </li>
             </ul>

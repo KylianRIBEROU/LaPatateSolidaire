@@ -2,14 +2,14 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface HeaderProps {
-  onNavigate: (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq") => void;
-  currentPage: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq";
+  onNavigate: (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval") => void;
+  currentPage: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval";
 }
 
 export function Header({ onNavigate, currentPage }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleNavClick = (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq") => {
+  const handleNavClick = (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval") => {
     onNavigate(page);
     setIsMenuOpen(false);
   };
@@ -25,16 +25,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
             </div>
 
             {/* Navigation Desktop */}
-            <nav className="hidden md:flex items-center gap-8 ml-auto mr-8">
-              <button
-                  onClick={() => handleNavClick("accueil")}
-                  className={`${
-                      currentPage === "accueil" ? "text-[#F59A4A]" : "text-[#27532F]"
-                  } hover:text-[#4C7A46] transition-colors text-xl font-bold`}
-              >
-                Accueil
-              </button>
-              
+            <nav className="hidden md:flex items-center gap-8 ml-auto mr-8">              
               <button
                   onClick={() => handleNavClick("nutriments")}
                   className={`${
@@ -69,6 +60,15 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                   } hover:text-[#4C7A46] transition-colors text-xl font-bold`}
               >
                 Conseils & FAQ
+              </button>
+
+              <button
+                  onClick={() => handleNavClick("aides-laval")}
+                  className={`${
+                      currentPage === "aides-laval" ? "text-[#F59A4A]" : "text-[#27532F]"
+                  } hover:text-[#4C7A46] transition-colors text-xl font-bold`}
+              >
+                Les aides à Laval
               </button>
             </nav>
 

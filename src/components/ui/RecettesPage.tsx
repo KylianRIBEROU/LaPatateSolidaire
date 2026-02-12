@@ -2,36 +2,32 @@
 // Page des recettes (à développer)
 
 import { Camera, Globe } from 'lucide-react';
-import { PotatoMascot } from '../svg/PotatoMascot';
-import { CarrotMascot } from '../svg/CarrotMascot';
-import { TomatoMascot } from '../svg/TomatoMascot';
 import { SocialRecipeLink } from './SocialRecipeLink';
+import logoMarmiton from '../../assets/logo_marmiton.png';
+import logoCuisineAZ from '../../assets/logo_cuisineaz.jpg';
+import logoCuisineActuelle from '../../assets/logo_cuisineactuelle.jpg';
+import logoMesRecettesHealthy from '../../assets/logo_mesrecetteshealthy.jpg';
+import logo750g from '../../assets/logo_750g.jpg';
+import logoAliceEsmeralda from '../../assets/logo_aliceesmeralda.jpg';
 
 export function RecettesPage() {
     return (
         <div className="min-h-screen bg-[#E8F2D5] py-16 px-4">
             <div className="max-w-6xl mx-auto">
                 {/* En-tête */}
-                <div className="text-center mb-12">
-                    <div className="flex justify-center gap-4 mb-6">
-                        <CarrotMascot size={80} />
-                        <PotatoMascot size={80} />
-                        <TomatoMascot size={80} />
-                    </div>
-                    <h1 className="text-[#27532F] mb-4">Nos recettes</h1>
+                <div className="text-center mb-12 pb-8 border-b border-[#4C7A46]/30">
+                    <h1 className="text-[#27532F] mb-4">Recueil de recettes</h1>
                     <p className="text-[#4C7A46] text-xl max-w-3xl mx-auto">
-                        Des recettes simples, économiques et équilibrées pour les étudiants
-                    </p>
+                        Découvrez des recettes  économiques, saines et faciles à réaliser !                   </p>
                 </div>
 
                 {/* Section liens vers comptes de recettes */}
                 <div className="mb-12">
                     <div className="text-center mb-8">
-                        <h2 className="text-[#27532F] mb-4">Découvrez des recettes healthy</h2>
-                        <p className="text-[#4C7A46] text-lg max-w-3xl mx-auto">
-                            Suivez ces comptes français pour des recettes healthy, équilibrées et économiques,
+                        <h4 className="text-[#4C7A46] text-lg max-w-3xl mx-auto">
+                            Consultez ces sites et blogs français pour des recettes healthy, équilibrées et économiques,
                             parfaites pour manger sainement avec un petit budget !
-                        </p>
+                        </h4>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -42,6 +38,7 @@ export function RecettesPage() {
                             description="Recettes healthy et économiques pour tous"
                             color="orange"
                             icon={<Globe size={40} className="text-white" />}
+                            image={logoMarmiton}
                         />
                         <SocialRecipeLink
                             platform="website"
@@ -50,6 +47,7 @@ export function RecettesPage() {
                             description="Recettes pas chères et faciles à réaliser"
                             color="green"
                             icon={<Globe size={40} className="text-white" />}
+                            image={logoCuisineAZ}
                         />
                         <SocialRecipeLink
                             platform="website"
@@ -58,6 +56,7 @@ export function RecettesPage() {
                             description="Idées recettes économiques et équilibrées"
                             color="yellow"
                             icon={<Globe size={40} className="text-white" />}
+                            image={logoCuisineActuelle}
                         />
                         <SocialRecipeLink
                             platform="instagram"
@@ -66,6 +65,7 @@ export function RecettesPage() {
                             description="Nutrition et recettes healthy équilibrées"
                             color="red"
                             icon={<Camera size={40} className="text-white" />}
+                            image={logoAliceEsmeralda}
                         />
                         <SocialRecipeLink
                             platform="instagram"
@@ -74,6 +74,7 @@ export function RecettesPage() {
                             description="Recettes saines et gourmandes chaque jour"
                             color="orange"
                             icon={<Camera size={40} className="text-white" />}
+                            image={logoMesRecettesHealthy}
                         />
                         <SocialRecipeLink
                             platform="website"
@@ -82,6 +83,7 @@ export function RecettesPage() {
                             description="Recettes équilibrées et nutritives validées"
                             color="green"
                             icon={<Globe size={40} className="text-white" />}
+                            image={logo750g}
                         />
                     </div>
                 </div>
