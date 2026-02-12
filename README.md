@@ -22,9 +22,7 @@ TODO
   
 ## TODO
 
-- REFAIRE la page d'accueil ! Enlever ces svg de fruit et mettre un truc plus beau. Il faut revoir cette page pour qu'elle redirige mieux vers les autres. ( et mettre au second plan la notion de "réseau d'entraide" et "communauté solidaire" étant donné qu'on ne propose pas d'évènements ou de solutions collaboratives de notre propre chef ). Bref, à revoir toute la disposition.
-
-- Ajouter une image sur les macro nutriments à l'endroit qui semble adapté, soit sur la page Bien s'alimenter ou Trouver des recettes. Exempel d'image à laquelle je fais référence : taper "macronutriments schéma" sur internet.
+- modifier page bien s'alimenter pour afficher les aliments et les conseils tout le temps, pas seulement lorsque quelqu'un remplit le formulaire 
 
 - (optionnel) page recettes : rajouter liens vers shorts youtube et reels instagram ( peut-être pas très utile mais esthétique si on affiche la miniature de la vidéo ) qui partagent des recettes. 
 

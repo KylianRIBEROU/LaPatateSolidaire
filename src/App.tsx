@@ -21,12 +21,92 @@ import {
   Utensils,
   Apple,
   HandHeart,
+  Calculator,
+  HelpCircle,
+  MapPin,
+  ArrowRight,
 } from "lucide-react";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
       "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval"
   >("accueil");
+
+  const items = [
+  {
+    page: "nutriments" as const,
+    icon: <Apple size={32} className="text-white" />,
+    color: "bg-[#4C7A46]",
+    title: "Les nutriments",
+    desc: "Comprends le rôle des glucides, protéines et lipides dans ton corps.",
+  },
+  {
+    page: "bien-salimenter" as const,
+    icon: <Calculator size={32} className="text-white" />,
+    color: "bg-[#F59A4A]",
+    title: "Bien s'alimenter",
+    desc: "Calcule tes besoins caloriques et découvre comment équilibrer tes repas.",
+  },
+  {
+    page: "recettes" as const,
+    icon: <Utensils size={32} className="text-white" />,
+    color: "bg-[#F4C16E]",
+    title: "Trouver des recettes",
+    desc: "Accède à des sites de recettes simples, rapides et économiques.",
+  },
+  {
+    page: "conseils-faq" as const,
+    icon: <HelpCircle size={32} className="text-white" />,
+    color: "bg-[#4C7A46]",
+    title: "Conseils & FAQ",
+    desc: "Retrouve des astuces pratiques et les réponses aux questions courantes.",
+  },
+  {
+    page: "aides-laval" as const,
+    icon: <MapPin size={32} className="text-white" />,
+    color: "bg-[#F59A4A]",
+    title: "Les aides à Laval",
+    desc: "Marchés solidaires, food-truck, Restos du Cœur, supermarchés... tout est là.",
+  },
+];
+
+const renderCard = (item: typeof items[number]) => (
+  <button
+    key={item.page}
+    onClick={() => {
+      setCurrentPage(item.page);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }}
+    className="
+      bg-[#FFFDF4]
+      rounded-2xl
+      p-6
+      w-64
+      border-2 border-[#E4E4D8]
+      shadow-md
+      hover:shadow-xl
+      transition-all
+      hover:-translate-y-1
+      text-left
+      group
+    "
+  >
+    <div className={`${item.color} w-14 h-14 rounded-full flex items-center justify-center mb-4`}>
+      {item.icon}
+    </div>
+    <h3 className="text-[#27532F] text-lg font-bold mb-2">
+      {item.title}
+    </h3>
+    <p className="text-[#4C7A46] text-sm mb-3">
+      {item.desc}
+    </p>
+    <span className="inline-flex items-center gap-1 text-[#F59A4A] font-bold text-sm group-hover:gap-2 transition-all">
+      Découvrir <ArrowRight size={16} />
+    </span>
+  </button>
+);
+
+
 
   return (
       <div className="min-h-screen bg-[#E8F2D5]">
@@ -104,6 +184,8 @@ export default function App() {
                   </div>
                 </div>
               </section>
+              <div className="max-w-4xl mx-auto pb-8 border-b border-[#4C7A46]/30"></div>
+
 
               {/* Section Informations - Objectifs */}
               <section className="py-16 px-4">
@@ -144,61 +226,29 @@ export default function App() {
                 </div>
               </section>
 
-              {/* Section Services supplémentaires */}
+              {/* Section : Explorer le site */}
               <section className="py-16 px-4 bg-[#FFFDF4]">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                   <div className="text-center mb-12">
-                    <h2 className="text-[#27532F] mb-4">
-                      Ce que nous proposons
-                    </h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <InfoCard
-                        icon={
-                          <Utensils size={40} className="text-white" />
-                        }
-                        title="Recettes simples"
-                        description="Des recettes faciles, rapides et économiques pour manger sainement sans se ruiner ni passer des heures en cuisine."
-                        color="orange"
-                    />
-                    <InfoCard
-                        icon={<Apple size={40} className="text-white" />}
-                        title="Conseils nutrition"
-                        description="Des informations claires et pratiques pour comprendre les bases d'une alimentation équilibrée et adaptée."
-                        color="green"
-                    />
-                    <InfoCard
-                        icon={
-                          <HandHeart size={40} className="text-white" />
-                        }
-                        title="Communauté solidaire"
-                        description="Un espace d'échange et de partage où les étudiants peuvent s'entraider et trouver du soutien."
-                        color="yellow"
-                    />
-                  </div>
-                </div>
-              </section>
-
-              {/* Section Call to Action */}
-              <section id="contact" className="py-20 px-4">
-                <div className="max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-r from-[#F59A4A] to-[#F4C16E] rounded-[3rem] p-8 sm:p-12 text-center shadow-2xl">
-                    <div className="flex justify-center gap-4 mb-6">
-                      <PotatoMascot size={80} />
-                      <CarrotMascot size={80} />
-                    </div>
-                    <h2 className="text-white mb-4">
-                      Rejoignez l'aventure !
-                    </h2>
-                    <p className="text-white text-xl mb-8">
-                      Ensemble, cultivons de meilleures habitudes
-                      alimentaires et soutenons-nous mutuellement.
+                    <h2 className="text-[#27532F] mb-3">Explore le site</h2>
+                    <p className="text-[#4C7A46] text-lg">
+                      Chaque rubrique t'apporte des outils concrets pour mieux t'alimenter au quotidien.
                     </p>
-                    <button className="bg-white text-[#27532F] px-10 py-4 rounded-full hover:bg-[#E8F2D5] transition-all hover:scale-105 shadow-xl">
-                      Nous contacter
-                    </button>
                   </div>
+
+                  <div className="flex flex-col items-center gap-6">
+
+  {/* Ligne du haut */}
+  <div className="flex gap-6">
+    {items.slice(0, 3).map(renderCard)}
+  </div>
+
+  {/* Ligne du bas */}
+  <div className="flex gap-6">
+    {items.slice(3, 5).map(renderCard)}
+  </div>
+</div>
+
                 </div>
               </section>
             </>
