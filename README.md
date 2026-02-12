@@ -22,9 +22,6 @@ TODO
   
 ## TODO
 
-
-- page "Aides A laval " : Dans une autre section de la page, rajouter une ligne avec quelques cases alignées horizontalement présentant les (super)marchés de Laval : Carrefour et les paniers anti gaspi pour fruits et légumes, Leclerc et son rayon date de péremption proche, ... 
-
 - REFAIRE la page d'accueil ! Enlever ces svg de fruit et mettre un truc plus beau. Il faut revoir cette page pour qu'elle redirige mieux vers les autres. ( et mettre au second plan la notion de "réseau d'entraide" et "communauté solidaire" étant donné qu'on ne propose pas d'évènements ou de solutions collaboratives de notre propre chef ). Bref, à revoir toute la disposition.
 
 - Ajouter une image sur les macro nutriments à l'endroit qui semble adapté, soit sur la page Bien s'alimenter ou Trouver des recettes. Exempel d'image à laquelle je fais référence : taper "macronutriments schéma" sur internet.
