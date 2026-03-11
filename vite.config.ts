@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import * as path from 'path';
 
 export default defineConfig({
+  base: '/LaPatateSolidaire/',
   plugins: [react(),
   tailwindcss()],
   resolve: {
