@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import logoPatateSolidaire from '../../assets/logo_patatesolidaire.png';
 
 interface HeaderProps {
   onNavigate: (page: "accueil" | "nutriments" | "bien-salimenter" | "recettes" | "conseils-faq" | "aides-laval") => void;
@@ -22,7 +23,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
 
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => handleNavClick("accueil")}>
-              <img src="src/assets/logo_patatesolidaire.png" alt="La Patate Solidaire" className="h-32 sm:h-36" />
+              <img src={logoPatateSolidaire} alt="La Patate Solidaire" className="h-32 sm:h-36" />
             </div>
 
             {/* Navigation Desktop */}

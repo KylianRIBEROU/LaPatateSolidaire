@@ -19,7 +19,9 @@ Projet réalisé par des étudiants de l'ESIEA (Laval).
 
 ## Hébergement
 
-Le site est actuellement hébergé sur **GitHub Pages**. Il sera à terme migré sur un **sous-domaine de l'ESIEA**.
+Le site est temporairement hébergé sur **GitHub Pages**. Avec l'URL : https://kylianriberou.github.io/LaPatateSolidaire/
+
+Il sera à terme migré sur un **sous-domaine de l'ESIEA**.
 
 ## Stack technique
 
