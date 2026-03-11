@@ -1,34 +1,43 @@
 # La Patate Solidaire
 
-TODO 
-  
+Site web informatif à destination des étudiants pour les aider à mieux s'alimenter, comprendre la nutrition et accéder aux ressources solidaires disponibles à Laval.
+
 ## Initiative
 
-TODO
+Projet étudiant mené dans le cadre du dispositif PaIRSe à l'ESIEA. L'objectif est de proposer un outil simple et accessible pour accompagner les étudiants vers une alimentation plus saine, équilibrée et adaptée à un petit budget.
+
+Le site propose cinq rubriques :
+- **Les nutriments** — rôle des glucides, protéines et lipides
+- **Bien s'alimenter** — calcul des besoins caloriques journaliers
+- **Trouver des recettes** — liens vers des sites de recettes simples et économiques
+- **Conseils & FAQ** — astuces pratiques et réponses aux questions courantes
+- **Les aides à Laval** — marchés solidaires, food-trucks, Restos du Cœur, Too Good To Go, supermarchés...
 
 ## Collaborateurs
 
-TODO
+Projet réalisé par des étudiants de l'ESIEA (Laval).
 
 ## Hébergement
 
-TODO
+Le site est actuellement hébergé sur **GitHub Pages**. Il sera à terme migré sur un **sous-domaine de l'ESIEA**.
 
-## Running the code
+## Stack technique
 
-  Run `npm i` to install the dependencies.
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS v4
+- Radix UI / shadcn
 
-  Run `npm run dev` to start the development server.
-  
+## Lancer le projet
+
+```bash
+npm i        # installer les dépendances
+npm run dev  # démarrer le serveur de développement
+npm run build # générer le build de production
+```
+
 ## TODO
 
-- modifier page bien s'alimenter pour afficher les aliments et les conseils tout le temps, pas seulement lorsque quelqu'un remplit le formulaire 
-
-- (optionnel) page recettes : rajouter liens vers shorts youtube et reels instagram ( peut-être pas très utile mais esthétique si on affiche la miniature de la vidéo ) qui partagent des recettes. 
-
-> Et relancer l'autre groupe PAIRSE ?!
-
-- de manière générale, juste continuer le développement et compléter les informations. On remarque forcément des problèmes et axes d'amélioration au fur et a mesure qu'on utilise le site de toute manière
-
-- (optionnel) Demander ce que les gens recherchent au début ( je pense ) pour les orienter vers la solution qu'ils souhaitent. genre ils cochent : perte de poids;, prise de masse, dans un contexte sportif ou non, a petit  budget
-et ca leur affiche les infos précises ( genre un diagnostic )
+- Modifier la page "Bien s'alimenter" pour afficher les aliments et conseils en permanence, sans attendre que le formulaire soit rempli.
+- Continuer le développement et compléter les informations au fil de l'utilisation du site.
+- *(Optionnel)* Ajouter un questionnaire initial pour orienter l'utilisateur selon ses objectifs (perte de poids, prise de masse, petit budget...) et lui afficher les informations les plus pertinentes.
