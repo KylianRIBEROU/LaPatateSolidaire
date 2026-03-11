@@ -7,6 +7,7 @@ import imgMarches from '../../assets/marche_laval_illustration.jpg';
 import logoCarrefour from '../../assets/logo_carrefour.png';
 import logoLeclerc from '../../assets/logo_leclerc.png';
 import logoIntermarche from '../../assets/logo_intermarche.png';
+import logoTGTG from '../../assets/togoodtogo.png';
 
 interface AideEntry {
   id: string;
@@ -216,6 +217,42 @@ export function AidesLavalPage() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Card Too Good To Go */}
+        <div className="bg-[#FFFDF4] rounded-2xl overflow-hidden shadow-lg shadow-black/10 mb-12">
+          <div className="bg-[#00B37A] px-8 py-5 flex items-center justify-between">
+            <span className="text-white text-2xl font-black tracking-tight">Too Good To Go</span>
+            <img src={logoTGTG} alt="Too Good To Go" className="h-16 object-contain" />
+          </div>
+          <div className="p-6 sm:p-8 grid md:grid-cols-3 gap-6 items-start">
+            <p className="md:col-span-2 text-[#4C7A46]">
+              Too Good To Go est une application anti-gaspi qui permet d'acheter des{" "}
+              <strong className="text-[#27532F]">paniers surprises à prix réduit</strong> (environ 3 à 4€)
+              auprès de commerçants locaux en fin de journée. À Laval, ce sont{" "}
+              <strong className="text-[#27532F]">+ de 10 enseignes partenaires</strong> qui proposent leurs
+              invendus : boulangeries, épiceries, restaurants et plus encore.
+              Un bon moyen de manger varié sans se ruiner tout en luttant contre le gaspillage alimentaire.
+            </p>
+            <div className="flex flex-col gap-3 text-sm text-[#4C7A46]">
+              <p><span className="font-bold text-[#27532F]">Partenaires notables :</span></p>
+              <ul className="space-y-1 list-none">
+                {["Boulangerie Ange", "Marie Blachère", "Carrefour City", "So.bio", "La Mie Câline"].map((e) => (
+                  <li key={e} className="flex items-center gap-2">
+                    <span className="text-[#00B37A]">✓</span> {e}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://toogoodtogo.com/fr-fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-2 bg-[#00B37A] text-white px-4 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity w-fit"
+              >
+                Télécharger l'app <ExternalLink size={14} />
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Retour en haut */}
